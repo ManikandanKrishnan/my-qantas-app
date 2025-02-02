@@ -1,9 +1,7 @@
 import { styled } from "styled-components";
 import { Container, Typography } from "@mui/material";
-import { CONSTANTS } from "../../helpers/constants";
 
 export const PageContainer = styled(Container)`
-  max-width: ${CONSTANTS.MAX_WIDTH};
   background-color: white;
   padding: 1.5rem 0;
   text-align: center;

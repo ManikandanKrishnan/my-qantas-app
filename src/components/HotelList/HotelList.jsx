@@ -1,9 +1,10 @@
 import React, { useState, useMemo } from "react";
 import { Stack, Divider } from "@mui/material";
-import HotelListHeader from "../HotelListHeader/HotelListHeader";
 import data from "../../data.json";
 import { PageContainer, EmptyState } from "./styles";
 import { CONSTANTS } from "../../helpers/constants";
+import HotelListHeader from "../HotelListHeader/HotelListHeader";
+import HotelCard from "../HotelCard/HotelCard";
 
 const HotelList = () => {
   const [sortOrder, setSortOrder] = useState(CONSTANTS.SORT_ORDER.HIGH_LOW);
@@ -32,6 +33,10 @@ const HotelList = () => {
       });
   }, [sortOrder]);
 
+  const handleCardClick = (hotel) => {
+    console.log("Selected Hotel: ", hotel);
+  };
+
   return (
     <PageContainer>
       {sortedHotels.length === 0 ? (
@@ -43,6 +48,16 @@ const HotelList = () => {
             sortOrder={sortOrder}
             setSortOrder={setSortOrder}
           />
+          <Stack spacing={2}>
+            {sortedHotels.map((hotel, index) => (
+              <React.Fragment key={hotel.id}>
+                <HotelCard hotel={hotel} handleCardClick={handleCardClick} />
+                {index !== sortedHotels.length - 1 && (
+                  <Divider sx={{ my: 2 }} />
+                )}
+              </React.Fragment>
+            ))}
+          </Stack>
         </>
       )}
     </PageContainer>
