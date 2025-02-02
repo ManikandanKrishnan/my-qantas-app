@@ -17,6 +17,7 @@ Build Tool: Vite
 1️⃣ Clone the Repository
 
 git clone https://github.com/ManikandanKrishnan/my-qantas-app.git
+
 cd my-qantas-app
 
 2️⃣ Install Dependencies
