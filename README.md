@@ -50,8 +50,4 @@ npm run coverage
 A coverage report will be generated in the coverage/ folder.
 
 
-npm run coverage
-
-Run tests with coverage report
-
 📧 Need help? Contact me on my mail.
