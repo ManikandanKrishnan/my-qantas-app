@@ -15,18 +15,21 @@ Build Tool: Vite
 🚀 Getting Started
 
 1️⃣ Clone the Repository
-
+```bash
 git clone https://github.com/ManikandanKrishnan/my-qantas-app.git
 
 cd my-qantas-app
+```
 
 2️⃣ Install Dependencies
-
+```bash
 npm install
+```
 
 3️⃣ Run the Application
-
+```bash
 npm run dev
+```
 
 The app will be available at http://localhost:5173/ (default Vite port).
 
@@ -34,27 +37,18 @@ The app will be available at http://localhost:5173/ (default Vite port).
 
 Run All Tests
 
+```bash
 npm run test
+```
 
 Run Tests with Coverage
 
+```bash
 npm run coverage
+```
 
 A coverage report will be generated in the coverage/ folder.
 
-🔗 Useful Commands
-
-Command
-
-Description
-
-npm run dev
-
-Start development server
-
-npm run test
-
-Run tests
 
 npm run coverage
 
