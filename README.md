@@ -17,7 +17,9 @@ Build Tool: Vite
 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/ManikandanKrishnan/my-qantas-app.git
+```
 
+```bash
 cd my-qantas-app
 ```
 
