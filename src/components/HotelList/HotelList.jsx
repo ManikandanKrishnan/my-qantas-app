@@ -34,6 +34,7 @@ const HotelList = () => {
   }, [sortOrder]);
 
   const handleCardClick = (hotel) => {
+    // Logic to pass hotel obj as payload to api and navigate to next page
     console.log("Selected Hotel: ", hotel);
   };
 
