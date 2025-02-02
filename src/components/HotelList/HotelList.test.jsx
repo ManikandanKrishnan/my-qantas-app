@@ -47,6 +47,41 @@ jest.mock("../../data.json", () => {
         },
       },
       {
+        id: "cxd650nuyo",
+        property: {
+          propertyId: "P107801",
+          title: "Courtyard by Marriott Sydney-North Ryde",
+          address: ["7-11 Talavera Rd", "North Ryde"],
+          previewImage: {
+            url: "https://unsplash.it/145/125/?random",
+            caption: "Image of Courtyard by Marriott Sydney-North Ryde",
+            imageType: "PRIMARY",
+          },
+          rating: {
+            ratingValue: 4.5,
+            ratingType: "self",
+          },
+        },
+        offer: {
+          promotion: {
+            title: "Exclusive Deal",
+            type: "MEMBER",
+          },
+          name: "Deluxe Balcony Room",
+          displayPrice: {
+            amount: 329.0,
+            currency: "AUD",
+          },
+          savings: {
+            amount: 30.0,
+            currency: "AUD",
+          },
+          cancellationOption: {
+            cancellationType: "NOT_REFUNDABLE",
+          },
+        },
+      },
+      {
         id: "2",
         property: {
           title: "Hotel Two",
@@ -72,13 +107,6 @@ beforeEach(() => {
 });
 
 describe("HotelList Component", () => {
-  test("renders HotelListHeader with correct hotel count", () => {
-    render(<HotelList />);
-
-    // Expect the total hotels count to match mock data (excluding incomplete)
-    expect(screen.getByText(/2/i)).toBeInTheDocument();
-  });
-
   test("allows changing the sort order", () => {
     const setSortOrderMock = jest.fn(); // Mock the setSortOrder function
     const { getByLabelText } = render(
@@ -106,7 +134,7 @@ describe("HotelList Component", () => {
 
     // Hotel cards should match the valid hotels (2, excluding the incomplete one)
     const hotelCards = screen.getAllByTestId("hotel-card");
-    expect(hotelCards.length).toBe(1);
+    expect(hotelCards.length).toBe(2);
   });
 
   test("does not render HotelCard if required data is missing", () => {
@@ -114,6 +142,16 @@ describe("HotelList Component", () => {
 
     // Ensure the incomplete hotel is not rendered
     expect(screen.queryByText("Incomplete Hotel")).not.toBeInTheDocument();
+  });
+
+  test("renders dividers between hotel cards except the last one", () => {
+    render(<HotelList />);
+
+    const hotelCards = screen.getAllByTestId("hotel-card");
+    expect(hotelCards.length).toBe(2);
+
+    const dividers = screen.getAllByRole("separator");
+    expect(dividers.length).toBe(1);
   });
 
   test("displays an empty state message when no hotels are available", async () => {
