@@ -43,7 +43,7 @@ const HotelListHeader = ({ totalHotels, sortOrder, setSortOrder }) => {
   );
 };
 
-// ✅ PropTypes Validation
+
 HotelListHeader.propTypes = {
   totalHotels: PropTypes.number.isRequired,
   sortOrder: PropTypes.oneOf([
