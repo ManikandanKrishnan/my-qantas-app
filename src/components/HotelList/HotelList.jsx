@@ -8,8 +8,6 @@ import HotelCard from "../HotelCard/HotelCard";
 
 const HotelList = () => {
   const [sortOrder, setSortOrder] = useState(CONSTANTS.SORT_ORDER.HIGH_LOW);
-
-  // Memoize sorted hotels
   const sortedHotels = useMemo(() => {
     return [...data.results]
       .filter(
